@@ -22,9 +22,17 @@ const App = () => {
     }
 
     const updateVotes = () => {
-        const newVotes = { ...votes };
+        const newVotes = [ ...votes ];
         newVotes[selected] += 1;
         setVotes(newVotes);
+    }
+
+    const getMaxVoted = () => {
+        const newVotes = [ ...votes ];
+        let max = votes.indexOf(Math.max(...votes));
+        console.log(max);
+        return anecdotes[max];
+
     }
     return (
         <div>
@@ -32,7 +40,7 @@ const App = () => {
             <Button handleClick = {() => setSelected(getRandom(anecdotes.length-1))} text = "next anecdote"/>
             <div>Votes for this anecdote: {votes[selected]}</div>
             <Button handleClick = {() => updateVotes()} text = "Vote for this anecdote"/>
-
+            <div>Popular anecdote: {getMaxVoted()}</div>
 
         </div>
     )
