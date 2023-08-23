@@ -39,6 +39,11 @@ const Statistics = props => {
     const bad = props.bad;
     const neutral = props.neutral;
 
+    if (good === 0 && bad ===0 && neutral === 0) {
+        return (<div><Heading value="Statistics"/>
+            <Display text="No feedback given"/></div>)
+    }
+
     return (<div><Heading value="Statistics"/>
         <Display text = "Good" value={good}/>
         <Display text = "Neutral" value={neutral}/>
