@@ -38,19 +38,32 @@ const Statistics = props => {
     const good = props.good;
     const bad = props.bad;
     const neutral = props.neutral;
-
+    const weights ={
+        good: 1,
+        bad: -1,
+        neutral : 0
+    }
+    const calculateAvg = () => {
+        if (good === 0 && bad ===0 && neutral === 0)
+            return 0;
+        return ((good * weights.good + bad * weights.bad + neutral * weights.neutral)/(good+bad+neutral))
+    }
+    const calculatePositive = () => {
+        if (good === 0 && bad ===0 && neutral === 0)
+            return 0;
+        return (good * 100/ (good+bad+neutral));
+    }
     if (good === 0 && bad ===0 && neutral === 0) {
         return (<div><Heading value="Statistics"/>
             <Display text="No feedback given"/></div>)
     }
-
     return (<div><Heading value="Statistics"/>
         <Display text = "Good" value={good}/>
         <Display text = "Neutral" value={neutral}/>
         <Display text = "Bad" value={bad}/>
         <Display text = "Total" value={good + bad + neutral}/>
-        <Average goodValue = {good} badValue = {bad} neutralValue = {neutral}/>
-        <Positive goodValue = {good} total ={good + bad + neutral}/></div>)
+        <Display text = "Average" value = {calculateAvg()}/>
+        <Display text = "Positive" value ={calculatePositive()}/></div>)
 }
 const App = () => {
     // save clicks of each button to its own state
