@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 const Heading = props => <div><h1>{props.value}</h1></div>
-const Display = props => <tbody><tr><td>{props.text}</td><td>{props.value}</td></tr></tbody>
+const Display = props => <tr><td>{props.text}</td><td>{props.value}</td></tr>
 const Button = props => <button onClick={props.handleClick}>{props.text}</button>
 
 const Statistics = props => {
@@ -25,18 +25,18 @@ const Statistics = props => {
     }
     if (good === 0 && bad ===0 && neutral === 0) {
         return (<div><Heading value="Statistics"/>
-            <div>"No feedback given"</div></div>);
+            <div>No feedback given</div></div>);
     }
     return (
         <div> <Heading value="Statistics"/>
-            <table>
+            <table><tbody>
             <Display text = "Good" value={good}/>
             <Display text = "Neutral" value={neutral}/>
             <Display text = "Bad" value={bad}/>
             <Display text = "Total" value={good + bad + neutral}/>
             <Display text = "Average" value = {calculateAvg()}/>
             <Display text = "Positive" value ={calculatePositive()}/>
-            </table>
+            </tbody></table>
         </div>
     )
 }
