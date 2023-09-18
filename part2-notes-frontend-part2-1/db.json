@@ -1,0 +1,49 @@
+{
+  "notes": [
+    {
+      "id": 1,
+      "content": "HTML is easy",
+      "important": false
+    },
+    {
+      "id": 2,
+      "content": "Browser can execute only JavaScript",
+      "important": false
+    },
+    {
+      "id": 3,
+      "content": "GET and POST are the most important methods of HTTP protocol",
+      "important": true
+    },
+    {
+      "content": "test",
+      "important": false,
+      "id": 4
+    },
+    {
+      "content": "test again",
+      "important": true,
+      "id": 5
+    },
+    {
+      "content": "test again",
+      "important": false,
+      "id": 6
+    },
+    {
+      "content": "test mew again",
+      "important": true,
+      "id": 7
+    },
+    {
+      "content": "test is all I do",
+      "important": true,
+      "id": 8
+    },
+    {
+      "content": "nothing much",
+      "important": false,
+      "id": 9
+    }
+  ]
+}
